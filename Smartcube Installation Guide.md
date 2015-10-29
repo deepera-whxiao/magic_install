@@ -1,13 +1,13 @@
 ## Smartcube Installation Guide ##
 
- - **Cluster configuration**
-scworker00, IP: 10.64.51.148
-scworker01, IP: 10.64.51.149
-scbackup00, IP: 10.64.51.150
- - **Operating System**
- SUSE Linux Enterprise Server 12
- - **ISO Image**
- SLE-12-Server-DVD-x86_64-GM-DVD1.iso
+ - **Cluster configuration**  
+scworker00, IP: 10.64.51.148  
+scworker01, IP: 10.64.51.149  
+scbackup00, IP: 10.64.51.150  
+ - **Operating System**  
+ SUSE Linux Enterprise Server 12  
+ - **ISO Image**  
+ SLE-12-Server-DVD-x86_64-GM-DVD1.iso  
 
 ----------
 
