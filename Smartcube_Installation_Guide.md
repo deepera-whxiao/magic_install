@@ -67,16 +67,13 @@
  > Enter same passphrase again:
  cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys
  chmod 600 ~/.ssh/authorized_keys
+ mv .ssh/id_rsa .ssh/id_rsa.pub .ssh/authorized_keys tmp-ssh/
+ scp -r .ssh smartcube@scworker01:/home/smartcube
+ scp -r .ssh smartcube@scbackup00:/home/smartcube
  ```
-
-
+ b. For `scworker01`, `scbackup00`
  ```Bash
- cd $STAGE0_HOME
- bash install-stage-0
- ```
- Set password for user `smartcube`:<br>
- ```Bash
- passwd smartcube
+ ssh smartcube@scworker00
  ```
 
 2. ****<br>
