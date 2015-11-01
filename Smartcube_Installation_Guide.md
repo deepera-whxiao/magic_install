@@ -38,7 +38,7 @@
  ```Bash
  sudo vim /etc/hostname
  ```
- Change the hostname(Take `scworker00` as an example)<br>
+ Change the hostname (Take `scworker00` as an example)<br>
  ```
  scworker00
  ```
@@ -52,7 +52,7 @@
  10.64.51.149, scworker01
  10.64.51.150, scbackup00
  ```
- Step 3: Restart the network service and verify hostname configuration(Take `scworker00` as an example)<br>
+ Step 3: Restart the network service and verify hostname configuration (Take `scworker00` as an example)<br>
  ```Bash
  sudo hostname scworker00
  sudo service network restart
@@ -81,32 +81,19 @@
  bash install-stage-1
  ```
 
-2. ****<br>
+3. **Stage-2-Docker**<br>
+ Description: Install basic packages and Docker<br>
+ Install File Required: *`Stage-3-Docker`*(Upload via WinSCP)<br>
+ Install File Location: *`/home/smartcube/Stage-3-Docker`*($STAGE3_HOME)<br>
+ VM involved: `scworker00`, `scworker01`, `scbackup00`<br>
  Login user: `smartcube`<br>
- Resources required:<br>
- `Hard disk 1: /dev/sdb, 500GB`<br>
- `Hard disk 2: /dev/sdc, 10TB`<br>
- `Hard disk 3: /dev/sdd, 10TB`<br>
- Script prepared: `$SMARTCUBE_HOME/smartcube-mount`(Upload via WinSCP)<br>
  Easy install:<br>
  ```Bash
- cd $ROOT_HOME/smartcube-mount
- sh smartcube-mount.sh install
- ```
-
-3. **Install basic packages and softwares**<br>
- Login user: `smartcube`<br>
- Resources required:<br>
- `Local zypper repository: $SMARTCUBE_HOME/disk/sle12.tar.gz`<br>
- `Local zypper repository configture file: $SMARTCUBE_HOME/disk/localrepo.repo`<br>
- `Docker configture file: $SMARTCUBE_HOME/disk/docker.config`<br>
- `Hadoop setup file: $SMARTCUBE_HOME/disk/Smartcube.tar.gz`<br>
- `Bashrc configure file: $SMARTCUBE_HOME/disk/bashrc.config`<br>
- (Upload via WinSCP)<br>
- Script prepared: `$SMARTCUBE_HOME/smartcube-preparation`(Upload via WinSCP)<br
- Easy install:<br>
- ```Bash
- cd $ROOT_HOME/smartcube-preparation
- sh smartcube-preparation.sh install
+ cd $STAGE3_HOME
+ bash install-stage-3
  ```
  (Note: Relogin as `smartcube` to enable execute docker commands without `sudo`)<br>
+
+4. **Stage-3-Hadoop**<br>
+
+5. **Stage-4-Smartcube**<br>
