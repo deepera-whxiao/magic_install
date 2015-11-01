@@ -27,7 +27,7 @@
  passwd smartcube
  ```
 
- 2. **Stage-1-Preparation**<br>
+2. **Stage-1-Preparation**<br>
  Description: Configure network and Mount hard disk<br>
  Install File Required: *`Stage-1-Preparation`*(Upload via WinSCP)<br>
  Install File Location: *`/home/smartcube/Stage-1-Preparation`*($STAGE1_HOME)<br>
@@ -54,9 +54,19 @@
  ```
  Step 3: Restart the network service and verify hostname configuration(Take scworker00 as an example)<br>
  ```Bash
- sudo service network restart
  sudo hostname scworker00
+ sudo service network restart
  hostname
+ ```
+ Step 4: Configure SSH atuo login among scworker00, scworker01, scbackup00<br>
+ a. For scworker00
+ ```
+ ssh-keygen -t rsa -q
+ Enter file in which to save the key (/home/smartcube/.ssh/id_rsa):
+ Enter passphrase (empty for no passphrase):
+ Enter same passphrase again:
+ cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys
+ chmod 600 ~/.ssh/authorized_keys
  ```
 
 
