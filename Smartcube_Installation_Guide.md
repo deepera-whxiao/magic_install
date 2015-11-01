@@ -27,7 +27,49 @@
  passwd smartcube
  ```
 
-2. **Mount hard disk**<br>
+ 2. **Stage-1-Preparation**<br>
+ Description: Configure network and Mount hard disk<br>
+ Install File Required: *`Stage-1-Preparation`*(Upload via WinSCP)<br>
+ Install File Location: *`/home/smartcube/Stage-1-Preparation`*($STAGE1_HOME)<br>
+ VM involved: scworker00, scworker01, scbackup00<br>
+ Login user: `smartcube`<br>
+ Easy install:<br>
+ Step 1: Edit */etc/hostname* file<br>
+ ```Bash
+ sudo vim /etc/hostname
+ ```
+ Change the hostname(Take scworker00 as an example)<br>
+ ```
+ scworker00
+ ```
+ Step 2: Edit */etc/hosts* file<br>
+ ```Bash
+ sudo vim /etc/hosts
+ ```
+ Append the following lines:<br>
+ ```
+ 10.64.51.148, scworker00
+ 10.64.51.149, scworker01
+ 10.64.51.150, scbackup00
+ ```
+ Step 3: Restart the network service and verify hostname configuration(Take scworker00 as an example)<br>
+ ```Bash
+ sudo service network restart
+ sudo hostname scworker00
+ hostname
+ ```
+
+
+ ```Bash
+ cd $STAGE0_HOME
+ bash install-stage-0
+ ```
+ Set password for user `smartcube`:<br>
+ ```Bash
+ passwd smartcube
+ ```
+
+2. ****<br>
  Login user: `smartcube`<br>
  Resources required:<br>
  `Hard disk 1: /dev/sdb, 500GB`<br>
