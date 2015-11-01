@@ -62,9 +62,9 @@
  a. For scworker00
  ```
  ssh-keygen -t rsa -q
- Enter file in which to save the key (/home/smartcube/.ssh/id_rsa):
- Enter passphrase (empty for no passphrase):
- Enter same passphrase again:
+ > Enter file in which to save the key (/home/smartcube/.ssh/id_rsa):
+ > Enter passphrase (empty for no passphrase):
+ > Enter same passphrase again:
  cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys
  chmod 600 ~/.ssh/authorized_keys
  ```
@@ -101,7 +101,7 @@
  `Hadoop setup file: $SMARTCUBE_HOME/disk/Smartcube.tar.gz`<br>
  `Bashrc configure file: $SMARTCUBE_HOME/disk/bashrc.config`<br>
  (Upload via WinSCP)<br>
- Script prepared: `$SMARTCUBE_HOME/smartcube-preparation`(Upload via WinSCP)<br>
+ Script prepared: `$SMARTCUBE_HOME/smartcube-preparation`(Upload via WinSCP)<br
  Easy install:<br>
  ```Bash
  cd $ROOT_HOME/smartcube-preparation
