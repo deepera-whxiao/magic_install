@@ -1,9 +1,9 @@
 ## Smartcube Installation Guide ##
 
 - **Cluster configuration**<br>
- scworker00, IP: 10.64.51.148<br>
- scworker01, IP: 10.64.51.149<br>
- scbackup00, IP: 10.64.51.150<br>
+ `scworker00`, IP: 10.64.51.148<br>
+ `scworker01`, IP: 10.64.51.149<br>
+ `scbackup00`, IP: 10.64.51.150<br>
 - **Operating System**<br>
  SUSE Linux Enterprise Server 12<br>
 - **ISO Image**<br>
@@ -15,7 +15,7 @@
  Description: Add user `smartcube` with `sudo` permission<br>
  Install File Required: *`Stage-0-Initializaiton`*(Upload via WinSCP)<br>
  Install File Location: *`/root/Stage-0-Initializaiton`*($STAGE0_HOME)<br>
- VM involved: scworker00, scworker01, scbackup00<br>
+ VM involved: `scworker00`, `scworker01`, `scbackup00`<br>
  Login user: `root`<br>
  Easy install:<br>
  ```Bash
@@ -31,14 +31,14 @@
  Description: Configure network and Mount hard disk<br>
  Install File Required: *`Stage-1-Preparation`*(Upload via WinSCP)<br>
  Install File Location: *`/home/smartcube/Stage-1-Preparation`*($STAGE1_HOME)<br>
- VM involved: scworker00, scworker01, scbackup00<br>
+ VMs involved: `scworker00`, `scworker01`, `scbackup00`<br>
  Login user: `smartcube`<br>
  Easy install:<br>
  Step 1: Edit */etc/hostname* file<br>
  ```Bash
  sudo vim /etc/hostname
  ```
- Change the hostname(Take scworker00 as an example)<br>
+ Change the hostname(Take `scworker00` as an example)<br>
  ```
  scworker00
  ```
@@ -52,14 +52,14 @@
  10.64.51.149, scworker01
  10.64.51.150, scbackup00
  ```
- Step 3: Restart the network service and verify hostname configuration(Take scworker00 as an example)<br>
+ Step 3: Restart the network service and verify hostname configuration(Take `scworker00` as an example)<br>
  ```Bash
  sudo hostname scworker00
  sudo service network restart
  hostname
  ```
- Step 4: Configure SSH atuo login among scworker00, scworker01, scbackup00<br>
- a. For scworker00
+ Step 4: Configure SSH atuo login among `scworker00`, `scworker01`, `scbackup00`<br>
+ a. For `scworker00`
  ```
  ssh-keygen -t rsa -q
  > Enter file in which to save the key (/home/smartcube/.ssh/id_rsa):
