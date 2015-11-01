@@ -59,7 +59,7 @@
  hostname
  ```
  Step 4: Configure SSH atuo login among `scworker00`, `scworker01`, `scbackup00`<br>
- a. For `scworker00`
+ a. For `scworker00`<br>
  ```
  ssh-keygen -t rsa -q
  > Enter file in which to save the key (/home/smartcube/.ssh/id_rsa):
@@ -71,9 +71,14 @@
  scp -r .ssh smartcube@scworker01:/home/smartcube
  scp -r .ssh smartcube@scbackup00:/home/smartcube
  ```
- b. For `scworker01`, `scbackup00`
+ b. For `scworker01`, `scbackup00`<br>
  ```Bash
  ssh smartcube@scworker00
+ ```
+ Step 5: Mount hard disk<br>
+ ```Bash
+ cd $STAGE1_HOME
+ bash install-stage-1
  ```
 
 2. ****<br>
