@@ -11,8 +11,12 @@
 
 ----------
 
-1. **Add user `smartcube` with `sudo` permission**<br>
- Login user: `Root`<br>
+1. **Stage-0-Initialization**<br>
+ Description: Add user `smartcube` with `sudo` permission<br>
+ Install File: *`Stage-0-Initializaiton`*(Upload via WinSCP)<br>
+ Install File Location: *`/root/Stage-0-Initializaiton`*<br>
+ VM involved: scworker00, scworker01, scbackup00<br>
+ Login user: `root`<br>
  Resources required: `None`<br>
  Script prepared: `$ROOT_HOME/smartcube-init`(Upload via WinSCP)<br>
  Easy install:<br>
